@@ -50,9 +50,16 @@ public class FripperController : MonoBehaviour
             SetAngle(this.flickAngle);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && tag == "LeftFripperTag" && tag == "RightFripperTag")
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
-            SetAngle(flickAngle);
+            if (tag == "LeftFripperTag")
+            {
+                SetAngle(flickAngle);
+            }
+            if (tag == "RightFripperTag")
+            {
+                SetAngle(flickAngle);
+            }
         }
 
         //矢印キーが離された時フリッパーを元に戻す
@@ -77,9 +84,16 @@ public class FripperController : MonoBehaviour
             SetAngle(defaultAngle);
         }
 
-        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && tag == "LeftFripperTag" && tag == "RightFripperTag")
+        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
-            SetAngle(defaultAngle);
+            if (tag == "LeftFripperTag")
+            {
+                SetAngle(defaultAngle);
+            }
+            if (tag == "RightFripperTag")
+            {
+                SetAngle(defaultAngle);
+            }
         }
 
         
